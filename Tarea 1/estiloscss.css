@@ -1,0 +1,156 @@
+/*
+Incluir los estilos para manipular el contenido utilizando los siguientes selectores:
+EtiquetaLISTO
+ID LISTO
+Clase LISTO
+Atributo LISTO
+Operadores ( >, +, ~) LISTO
+Pseudo-clases LISTO
+Pseudo-elementos LISTO
+*/
+
+/*
+Se tomará sobre una calificación del 100% lo siguiente:
+
+Documento HTML: 20%  LISTO
+Selectores de etiqueta, clase e ID: 10% LISTO
+Selectores por atributo: 10%  -----
+Uso de pseudo-clases de enlaces: 10% LISTO
+Uso de pseudo-clases de estatus: 10% LISTO
+Uso de pseudo-clases por estructura: 10% LISTO
+Uso de pseudo-elementos: 10% LISTO
+Implementa por lo menos un breakpoint: 20% LISTO
+*/
+
+html,body{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color:lightpink;
+}
+
+h1{
+    font-size: 36px;
+    margin: 0 40px 0 0;
+    display: inline;
+    color: white;
+}
+
+h2{
+    font-size: 32px;
+    margin-top: 0px;
+}
+
+
+#datos{
+    color: crimson;
+}
+
+#acerca,#tiempo{
+    color:darkcyan;
+}
+
+h2:nth-of-type(4){
+    font-family: 'Lucida Grande';
+}
+
+li:nth-child(2){
+    font-family: 'Times New Roman';
+}
+li ~ li{
+  font-weight: bolder;
+}
+
+#cont{
+    border: solid;
+    width: 140px;
+}
+
+header > a {
+    color: white;
+    
+}
+
+header > a:hover {
+    color:brown;
+    
+}
+
+header{
+height: 80px;
+background-color:blueviolet;
+padding-left: 20px;
+line-height: 80px;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1;
+}
+
+main{
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    padding-top: 100px;
+}
+
+table{
+    background-color: white;
+}
+
+footer{
+    height: 200px;
+    text-align: center;
+    background-color: lightgrey;
+    padding-top: 20px;
+}
+
+a:visited{
+    color: red;
+}
+
+.gallery{
+    width: 100%;
+}
+
+.gallery > .gallery-item{
+    width: 20%;
+    height: 120px;
+    float: left;
+    border: solid 1px black;
+    box-sizing: border-box;
+
+}
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+:disabled{
+    font-weight: 900;
+}
+
+@media only screen and (max-width:650px){
+    .gallery > .gallery-item{
+       width: 33%;
+    }
+    HEader > a{
+        font-size: x-small;
+    }
+}
+@media only screen and (max-width:360px){
+    .gallery > .gallery-item{
+       width: 50%;
+    }
+}
+
+
+
+
+
