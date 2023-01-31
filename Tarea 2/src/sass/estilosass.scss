@@ -1,0 +1,152 @@
+/*
+Crear los archivos SASS necesarios para implementar, como mínimos requerimientos:
+Variables LISTO
+Parciales LISTO
+Nesting  LISTO
+@extend Listo
+Mixins
+Mixins + @content
+Se deberán soportar por lo menos 2 breakpoints para hacer el sitio responsivo
+*/
+@import "variables";
+
+body{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 36px;
+    margin: 0 40px 0 0;
+    display: inline;
+    color: $color-texto-header;
+}
+
+h2{
+    font-size: 32px;
+    margin-top: 0px;
+
+    &:nth-of-type(4){
+        font-family: 'Lucida Grande';
+    }
+}
+
+@mixin letara-titulos{
+    font-family:fantasy;
+}
+
+#acerca,#datos{
+    color:$color-primario;
+    @include letara-titulos;
+
+}
+#tiempo{
+    @extend #acerca;
+    font-weight:lighter;
+}
+
+li{
+    &:nth-of-type(4){
+        font-family: 'Lucida Grande';
+    }
+
+    ~ li{
+        font-weight: bolder;
+      }
+}
+
+#cont{
+    border: solid;
+    width: 140px;
+}
+
+header{
+    height: 80px;
+    background-color:$color-primario;
+    padding-left: 20px;
+    line-height: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    > a {
+        color: $color-texto-header;  
+    }
+
+    > a:hover {
+        color:red;   
+    }
+    
+}
+
+main{
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    padding-top: 100px;
+}
+
+footer{
+    height: 200px;
+    text-align: center;
+    background-color: lightgrey;
+    padding-top: 20px;
+}
+
+a:visited{
+    color: chartreuse;
+}
+
+.gallery{
+    width: 100%;
+
+    > .gallery-item{
+        width: 20%;
+        height: 120px;
+        float: left;
+        border: solid 1px black;
+        box-sizing: border-box;
+    
+    }
+}
+
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+:disabled{
+    font-weight: 900;
+}
+
+@mixin tablet{
+    @media only screen and (max-width:650px){
+        @content;
+        .gallery > .gallery-item{
+           width: 33%;
+        }
+
+    }
+    @media only screen and (max-width:360px){
+        @content;
+        .gallery > .gallery-item{
+           width: 50%;
+        }
+    }
+}
+
+@include tablet{
+    header > a {
+        font-size: xx-small;
+     }
+ 
+}
+
